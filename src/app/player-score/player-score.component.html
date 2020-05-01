@@ -1,0 +1,46 @@
+<p>player-score works!</p>
+<!--https://stackoverflow.com/questions/58919921/access-nested-json-object-angular-6
+
+https://stackoverflow.com/questions/45482593/angular2-adding-two-numbers-view-side
+-->
+<b>Game Name is</b> : <ul *ngFor = "let game of gamess">
+    <li>{{game.gamename}}</li
+        
+        
+        >
+
+
+    <b>Game Descrption is</b> : 
+     <li>{{game.gamedesc}}</li>
+    <b>Team Name is</b> 
+    :  <label *ngFor="let team of game.mappedTeams">
+        {{team.teamname}}
+         </label>
+         <br/>
+   <label><b>Player Details </b> :</label> 
+    <li *ngFor="let players of game.mappedTeams[0].mappedPlayers">
+        <label><b>Name:</b></label>
+            {{players.fullName}}
+          <label><b>Role:</b></label>
+          {{players.playerRole}}
+         <label><b>Total Score:</b></label>
+         {{ConvertToInt(players.totalScore) + ConvertToInt(players.scrumCermonyScore)}}
+    </li>
+
+ 
+
+</ul>
+<!-- 
+<ul *ngFor= "let class of gamess">
+    <span> {{class.code}} </span>
+
+    <label *ngFor="let student of class.students | keyvalue">
+        <span>{{student.value.fullName}} </span>
+    </label>
+
+</ul> -->
+
+
+
+
+
